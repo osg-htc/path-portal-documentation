@@ -1,0 +1,268 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+
+<style>
+    body {
+        font-size: 1rem;
+    }
+
+    .top-hr {
+        font-size: 16px;
+    }
+
+    .child h3 {
+        margin-top: 1.2rem;
+    }
+
+    .sub-doc ul {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 12px;
+    }
+
+    .sub-doc li {
+        position: relative;
+        margin: .5rem 0;
+        display: flex;
+        align-items: center;
+        color: #6D6D6D;
+    }
+
+    .sub-doc ul li::before {
+        content: url("/documentation/assets/file-text.svg");
+        height: 24px; width: 18px;
+        transform: translatex(-50%);
+    }
+
+    .sub-doc a {
+        color: #2b2b2b;
+        font-weight: 500;
+        transition: color .2s;
+        transition-timing-function: ease-in;
+    }
+
+    .sub-doc a:hover {
+        color: var(--md-primary-fg-color);
+        transition: color .2s;
+        transition-timing-function: ease-out;
+    }
+
+    .parent-doc {
+        padding: 0 80px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .parent-doc > h2 {
+        margin-right: auto;
+        margin-bottom: -5px;
+        padding-bottom: .5rem;
+        border-bottom: var(--md-primary-fg-color) 5px solid;
+    }
+
+    .sub-doc {
+        border-top: var(--md-primary-fg-color) 1px solid;
+    }
+
+    .tx-container {
+        padding-top: .0rem;
+        background: linear-gradient(to bottom, var(--md-primary-bg-color), #fff 99%);
+    }
+
+    .md-tabs {
+        box-shadow: none;
+    }
+
+    .tx-hero {
+        margin: 32px 2.8rem;
+        color: var(--md-default-fg-color);
+        justify-content: center;
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: black;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 1rem;
+        margin: 0 auto;
+    }
+
+    .tx-hero__image{
+        display: flex;
+        order:1;
+        width: 50%;
+    }
+
+    .tx-hero__image > img {
+        margin: auto;
+        overflow-x: visible;
+    }
+
+    .md-typeset img, .md-typeset svg {
+        height:210px;
+        max-width: none;
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: black;
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-primary-bg-color);
+        color: var(--md-accent-fg-color);
+        border-color: var(--md-primary-bg-color);
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
+    }
+
+    .top-hr {
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width:30em) {
+        .tx-hero {
+            margin: 20px;
+        }
+
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+
+        .tx-hero__image {
+            width:100%;
+            padding-bottom: 1rem;
+        }
+
+        .md-typeset img, .md-typeset svg {
+            height:auto;
+            width:100%;
+        }
+
+        .parent-doc {
+            padding: 0 20px;
+        }
+    }
+
+    @media screen and (min-width:60em) {
+        .sub-doc:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .child:nth-child(even) {
+            width: 48.14815%;
+            float: right;
+            margin-right: 0;
+            clear: right;
+        }
+
+        .child {
+            width: 48.14815%;
+            float: left;
+            margin-right: 3.7037%;
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-hero__content {
+            max-width: 22rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            margin-left: 1.0rem;
+            margin-right: 4.0rem;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .top-hr {
+            width: 100%;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
+</style>
+
+<!-- Main site Entry button descriptions -->
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <div class="tx-hero__image">
+          <img src="assets/PATh_Logo_Primary_Color_Portal.png" draggable="false">
+        </div>
+        <div class="tx-hero__content">
+          <h1>PATh Facility Documentation</h1>
+          <p><b>Documentation and Support hub for researchers using <a href="https://path-cc.io/facility/index.html">PATh Facilities</a> compute and storage resources to help with their research.</b></p>
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
+            Get started
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+{% if nav|length>1 %}
+    <div class="top-hr">
+        {% for nav_item in nav %}
+            {% if not loop.first %}
+                <div class="parent-doc">
+                    <h2>{{ nav_item.title }}</h2>
+                    <div class="sub-doc">
+                        {% for nav_item in nav_item.children %}
+                            <div class="child">
+                                <h3>{{ nav_item.title }}</h3>
+                                <ul>
+                                    {% for nav_item in nav_item.children %}
+                                        <li class="{% if nav_item.active%}current{% endif %}">
+                                            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}{% endblock %}

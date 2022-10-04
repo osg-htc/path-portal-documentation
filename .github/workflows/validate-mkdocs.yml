@@ -1,0 +1,40 @@
+name: Validate static MkDocs pages
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  validate-mkdocs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: 'recursive'
+      - name: Build MkDocs pages
+        uses: docker://squidfunk/mkdocs-material:8.2.8
+        timeout-minutes: 1
+        with:
+          args: >-
+            build
+            --verbose
+            --strict
+
+      - id: format-github-repo
+        run: echo "::set-output name=repo-name::${GITHUB_REPOSITORY#*\/}"
+
+      - name: Test links
+        timeout-minutes: 10
+        uses: docker://klakegg/html-proofer:3.16.0
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        with:
+          args: >-
+            --allow-hash-href
+            --check-html
+            --http-status-ignore 302
+            ./documentation

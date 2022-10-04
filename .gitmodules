@@ -1,0 +1,3 @@
+[submodule "user-documentation"]
+	path = user-documentation
+	url = https://github.com/osg-htc/user-documentation.git

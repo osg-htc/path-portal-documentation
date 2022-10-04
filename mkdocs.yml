@@ -1,0 +1,32 @@
+INHERIT: ./user-documentation/data/configs/path.yml
+
+docs_dir: ./user-documentation/data/docs/path
+site_dir: documentation/documentation
+
+site_name: PATh Documentation
+site_url: "https://portal.path-cc.io/documentation/"
+repo_name: osg-htc/user-documentation
+theme:
+  features:
+    - navigation.tabs
+  name: material
+  logo: assets/PATh_Logo_Round_Color_White_Border.png
+  favicon: assets/PATh_Logo_Round_Color.png
+  custom_dir: overrides
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: False
+  - meta
+  - pymdownx.details
+  - toc:
+      permalink: True
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/code-highlight.css
+  - stylesheets/path.css

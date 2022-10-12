@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 
 jobs:
 
@@ -67,7 +67,7 @@ jobs:
           # Commit the build then use 'git subtree' to create a branch with just the site contents
           git add site -f
           git commit -m "Build Static HTML"
-          git checkout -b static `git subtree split --prefix site master`
+          git checkout -b static `git subtree split --prefix site main`
 
           # Push to Production
           git push --set-upstream origin static --force

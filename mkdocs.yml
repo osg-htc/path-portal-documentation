@@ -1,7 +1,6 @@
 INHERIT: ./user-documentation/data/configs/path.yml
 
 docs_dir: ./user-documentation/data/docs/path
-site_dir: documentation/documentation
 
 site_name: PATh Documentation
 site_url: "https://portal.path-cc.io/documentation/"

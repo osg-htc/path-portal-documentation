@@ -27,6 +27,14 @@ jobs:
       - id: format-github-repo
         run: echo "::set-output name=repo-name::${GITHUB_REPOSITORY#*\/}"
 
+      - id: Move to file dir to resemble prod setup
+        run: |
+          mkdir documentation
+          cd documentation
+          mkdir documentation
+          cd ..
+          mv site documentation/documentation
+
       - name: Test links
         timeout-minutes: 10
         uses: docker://klakegg/html-proofer:3.16.0

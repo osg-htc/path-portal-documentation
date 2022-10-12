@@ -61,9 +61,6 @@ jobs:
 
       - name: Deploy to 'static' branch
         run: |
-          # Move the static site to the site directory
-          mv documentation/documentation site
-          
           # Commit the build then use 'git subtree' to create a branch with just the site contents
           git add site -f
           git commit -m "Build Static HTML"

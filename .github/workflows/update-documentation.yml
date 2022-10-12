@@ -75,7 +75,7 @@ jobs:
     needs: [Build-Static-Site, Update-Submodules]
     env:
       OWNER: "osg-htc"
-      REPO: "osg-portal"
+      REPO: "path-portal"
       WORKFLOW_ID: "release-documentation-update.yml"
     steps:
       - name: Trigger Documentation Release

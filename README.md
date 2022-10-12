@@ -32,7 +32,18 @@ docker run --rm -it -p 8005:8005 -v ${PWD}:/docs squidfunk/mkdocs-material
 
 ARM
 ```shell
-docker run --rm -it -p 8005:8000 -v  ${PWD}:/docs ghcr.io/afritzler/mkdocs-material
+docker run --rm -it -p 8005:8000 -v  ${PWD}:/docs ghcr.io/afritzler/mkdocs-material build
+```
+
+### Build
+
+```shell
+docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
+```
+
+ARM
+```shell
+docker run --rm -it -v ${PWD}:/docs ghcr.io/afritzler/mkdocs-material build
 ```
 
 ### Test Links Locally
@@ -40,7 +51,7 @@ docker run --rm -it -p 8005:8000 -v  ${PWD}:/docs ghcr.io/afritzler/mkdocs-mater
 ```shell
 # Build the site into /site directory
 docker run --rm -v  ${PWD}:/docs ghcr.io/afritzler/mkdocs-material build
- O
+
 # Test the links
 docker run --rm -it \
   -v $(pwd)/documentation:/src \

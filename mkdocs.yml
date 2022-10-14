@@ -12,6 +12,8 @@ theme:
   logo: assets/PATh_Logo_Round_Color_White_Border.png
   favicon: assets/PATh_Logo_Round_Color.png
   custom_dir: overrides
+extra:
+  homepage: /
 
 markdown_extensions:
   - admonition

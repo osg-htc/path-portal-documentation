@@ -27,12 +27,12 @@ If you are looking to change the following look in [here](https://github.com/osg
 ### Development
 
 ```shell
-docker run --rm -it -p 8005:8005 -v ${PWD}:/docs squidfunk/mkdocs-material
+docker run --rm -it -p 8006:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 ```
 
 ARM
 ```shell
-docker run --rm -it -p 8005:8000 -v  ${PWD}:/docs ghcr.io/afritzler/mkdocs-material build
+docker run --rm -it -p 8006:8000 -v  ${PWD}:/docs ghcr.io/afritzler/mkdocs-material
 ```
 
 ### Build

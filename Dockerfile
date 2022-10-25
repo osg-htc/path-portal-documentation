@@ -3,7 +3,7 @@ FROM squidfunk/mkdocs-material:latest
 COPY user-documentation/scripts/requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
-ADD images/ /docs/images
+
 ADD overrides/ /docs/overrides
 COPY mkdocs.yml /docs/
 

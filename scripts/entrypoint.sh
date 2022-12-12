@@ -1,6 +1,8 @@
 #!/bin/bash
 
-python3 user-documentation/scripts/link-docs.py
+cd /docs/user-documentation
+
+python3 scripts/link-docs.py
 
 echo "I have built the User Documentation"
 

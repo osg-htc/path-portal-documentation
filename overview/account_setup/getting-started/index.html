@@ -1,0 +1,869 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://portal.path-cc.io/documentation/overview/account_setup/getting-started/">
+      
+      <link rel="icon" href="../../../assets/PATh_Logo_Round_Color.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Getting Started - PATh Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/path.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-on-the-path-facility" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="/" title="PATh Documentation" class="md-header__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PATh Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Overview
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-tabs__link">
+        Support And Training Resources
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../htc_workloads/submitting_workloads/quickstart/" class="md-tabs__link">
+        Managing HTC Workloads On the PATh Facility
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="/" title="PATh Documentation" class="md-nav__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    PATh Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Welcome And Account Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome And Account Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome And Account Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Getting Started
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-a-consultation" class="md-nav__link">
+    1. Set up a Consultation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-submit-credit-request" class="md-nav__link">
+    2. Submit Credit Request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-provide-path-with-user-information" class="md-nav__link">
+    3. Provide PATh with User Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-registering-and-logging-into-path-facility-account" class="md-nav__link">
+    4. Registering and Logging into PATh Facility Account
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registration/" class="md-nav__link">
+        Registration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generate-add-sshkey/" class="md-nav__link">
+        Log in with SSH Keys
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="References" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/credit-account-charges/" class="md-nav__link">
+        Credit Account Charges
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Support And Training Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support And Training Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support And Training Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Get Help!
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Get Help!" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Get Help!
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-nav__link">
+        Email, Office Hours, and Individual Consultations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Managing HTC Workloads On the PATh Facility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing HTC Workloads On the PATh Facility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Managing HTC Workloads On the PATh Facility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Submitting HTC Workloads With HTCondor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Submitting HTC Workloads With HTCondor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Submitting HTC Workloads With HTCondor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/submitting_workloads/quickstart/" class="md-nav__link">
+        Quickstart-Submit Example HTCondor Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/submitting_workloads/submit-multiple-jobs/" class="md-nav__link">
+        Easily Submit Multiple Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-a-consultation" class="md-nav__link">
+    1. Set up a Consultation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-submit-credit-request" class="md-nav__link">
+    2. Submit Credit Request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-provide-path-with-user-information" class="md-nav__link">
+    3. Provide PATh with User Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-registering-and-logging-into-path-facility-account" class="md-nav__link">
+    4. Registering and Logging into PATh Facility Account
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="getting-started-on-the-path-facility">Getting Started on the PATh Facility<a class="headerlink" href="#getting-started-on-the-path-facility" title="Permanent link">&para;</a></h1>
+<p>The PATh Facility is part of a pilot project funded by the NSF Office of Advanced 
+Cyberinfrastructure. NSF-funded researchers can apply to request credits for the PATh
+facility. The facility aims to demonstrate the value of dedicated, distributed resources
+to the NSF Science and Engineering community.</p>
+<p>Composed of current gen hardware, consisting of 30,000 cores and 36 A100 GPUs the PATh facility is built to 
+run your high throughput computing workloads. Managed by the HTCondor Suite's Access Point the PATh facility is 
+managed to make running these workloads easy.</p>
+<h2 id="1-set-up-a-consultation">1. Set up a Consultation<a class="headerlink" href="#1-set-up-a-consultation" title="Permanent link">&para;</a></h2>
+<p>The PATh team is here to help! As part of the consulting services offered to any researcher, our team can help you 
+decompose your workload to ensembles of jobs and generate resource estimates for the various tasks in the ensemble. </p>
+<p>Interested Investigators are encouraged to reach out the PATh support staff at 
+<a href="credit-accounts@path-cc.io">credit-accounts@path-cc.io</a> with questions regarding PATh resources, 
+using HTC or estimating credit needs.</p>
+<h2 id="2-submit-credit-request">2. Submit Credit Request<a class="headerlink" href="#2-submit-credit-request" title="Permanent link">&para;</a></h2>
+<p>The opportunity to use PATh Facility resources is available to all PIs submitting, or having submitted, proposals to the
+following Programs as per the <a href="https://www.nsf.gov/pubs/2022/nsf22051/nsf22051.jsp">Dear Colleagues Letter</a>:</p>
+<ul>
+<li><a href="https://beta.nsf.gov/funding/opportunities/computational-and-data-enabled-science-and-engineering-cdse-0">Computational and Data-Enabled Science and Engineering</a> (CDS&amp;E), NSF, PO: Christina Payne, <a href="mailto:cpayne@nsf.gov">cpayne@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/cyberinfrastructure-sustained-scientific-innovation-cssi">Cyberinfrastructure for Sustained Scientific Innovation</a> (CSSI), CISE/OAC, PO: Tevfik Kosar, <a href="mailto:tkosar@nsf.gov">tkosar@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/innovation-bioinformatics">Innovation: Bioinformatics</a>, BIO/DBI, PO: Jean X. Gao, <a href="mailto:jgao@nsf.gov">jgao@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/neural-systems-0">Neural Systems</a>, BIO/IOS, PO: Evan Balaban, <a href="mailto:ebalaban@nsf.gov">ebalaban@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/collaborative-research-computational-neuroscience-crcns">Collaborative Research in Computational Neuroscience</a> (CRCNS), CISE/IIS, PO: Kenneth Whang, <a href="mailto:kwhang@nsf.gov">kwhang@nsf.gov</a> ‒ see also <a href="https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf22022">NSF DCL 22-022</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/astronomy-and-astrophysics-research-grants-aag">Astronomy and Astrophysics Research Grants</a> (AAG), MPS/AST, PO: Andreas Berlind, <a href="mailto:aberlind@nsf.gov">aberlind@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/chemical-theory-models-and-computational-methods-ctmc-0">Chemical Theory, Models, and Computational Methods</a> (CTMC), MPS/CHE, PO: Richard Dawes, <a href="mailto:rdawes@nsf.gov">rdawes@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/condensed-matter-and-materials-theory-cmmt-0">Condensed Matter and Materials Theory</a> (CMMT), MPS/DMR, PO: Daryl Hess, <a href="mailto:dhess@nsf.gov">dhess@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/atomic-molecular-and-optical-physics-theory-0">Atomic, Molecular and Optical Physics ‒ Theory</a>, MPS/PHY, PO: Robert Forrey, <a href="mailto:rforrey@nsf.gov">rforrey@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/nuclear-physics-theory-0">Nuclear Physics ‒ Theory</a>, MPS/PHY, PO: Bogdan Mihaila, MPS/PHY, <a href="mailto:bmihaila@nsf.gov">bmihaila@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/geoinformatics-gi">Geoinformatics (GI),</a> GEO/EAR, PO: Raleigh Martin, <a href="mailto:ramartin@nsf.gov">ramartin@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/geophysics-ph-0">Geophysics (PH)</a>, GEO/EAR, PO: Eva Zanzerkia, <a href="mailto:ezanzerk@nsf.gov">ezanzerk@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/arctic-research-opportunities">Arctic Research Opportunities</a>, GEO/OPP, POs: Marc Stieglitz, <a href="mailto:mstiegli@nsf.gov">mstiegli@nsf.gov</a>, Allen Pope, <a href="mailto:apope@nsf.gov">apope@nsf.gov</a></li>
+<li><a href="https://beta.nsf.gov/funding/opportunities/antarctic-research">Antarctic Research</a>, GEO/OPP, PO: Allen Pope, <a href="mailto:apope@nsf.gov">apope@nsf.gov</a></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>More details can be found in the <a href="https://www.nsf.gov/pubs/2022/nsf22051/nsf22051.jsp">Dear Colleagues Letter</a> provided by the NSF.</p>
+</div>
+<h2 id="3-provide-path-with-user-information">3. Provide PATh with User Information<a class="headerlink" href="#3-provide-path-with-user-information" title="Permanent link">&para;</a></h2>
+<p>To help use manage the users of the PATh facility we require that all PI's awarded with credits complete a 
+quick account details form. After completion of this form PATh support will contact you to set up your credit accounts. </p>
+<p><a class="md-button" href="/application">PATh User Application</a></p>
+<h2 id="4-registering-and-logging-into-path-facility-account">4. Registering and Logging into PATh Facility Account<a class="headerlink" href="#4-registering-and-logging-into-path-facility-account" title="Permanent link">&para;</a></h2>
+<p>Now that you have credits, and have met with our facilitation staff, you are ready to start using your allocation. Follow
+our <a href="../../overview/account_setup/registration/">Registration and Login Guide</a> to access your account and start running
+your workloads!</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../registration/" class="md-footer__link md-footer__link--next" aria-label="Next: Registration" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Registration
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -8,4 +8,4 @@ echo "I have built the User Documentation"
 
 cd /docs
 
-mkdocs "$@"
+exec mkdocs "$@"

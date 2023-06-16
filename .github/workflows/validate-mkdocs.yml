@@ -25,7 +25,7 @@ jobs:
             --strict
 
       - id: format-github-repo
-        run: echo "::set-output name=repo-name::${GITHUB_REPOSITORY#*\/}"
+        run: echo "repo-name=${GITHUB_REPOSITORY#*\/}" >> $GITHUB_OUPUT
 
       - id: Move to file dir to resemble prod setup
         run: |

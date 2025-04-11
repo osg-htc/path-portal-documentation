@@ -8,6 +8,7 @@ repo_name: osg-htc/user-documentation
 theme:
   features:
     - navigation.tabs
+    - content.tabs.link
   name: material
   logo: assets/PATh_Logo_Round_Color_White_Border.png
   favicon: assets/PATh_Logo_Round_Color.png
@@ -27,6 +28,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_css:
   - stylesheets/code-highlight.css

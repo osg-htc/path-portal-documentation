@@ -1,0 +1,1453 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://portal.path-cc.io/documentation/overview/account_setup/generate-add-sshkey/">
+      
+      <link rel="icon" href="../../../assets/PATh_Logo_Round_Color.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Log in with SSH Keys - PATh Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/path.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generate-ssh-keys-and-activate-your-path-facility-login" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="/" title="PATh Documentation" class="md-header__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PATh Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Log in with SSH Keys
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link md-tabs__link--active">
+        Overview
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-tabs__link">
+        Support And Training Resources
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../htc_workloads/submitting_workloads/quickstart/" class="md-tabs__link">
+        Managing HTC Workloads On the PATh Facility
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="/" title="PATh Documentation" class="md-nav__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    PATh Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../request-credits/" class="md-nav__link">
+        Request PATh Facility Credits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/credit-account-charges/" class="md-nav__link">
+        Credit Account Charges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/PATh_vs_OSPool/" class="md-nav__link">
+        PATh Facility vs. OSG's Open Science Pool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Account Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Account Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registration/" class="md-nav__link">
+        Register for a PATh Facility Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Log in with SSH Keys
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Log in with SSH Keys
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-generate-ssh-keys" class="md-nav__link">
+    Step 1: Generate SSH Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Generate SSH Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unix-based-operating-system-linuxmac-or-latest-windows-10-versions" class="md-nav__link">
+    Unix-based operating system (Linux/Mac) or latest Windows 10 versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-using-putty-to-log-in" class="md-nav__link">
+    Windows, using Putty to log in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-add-the-public-ssh-key-to-login-node" class="md-nav__link">
+    Step 2: Add the public SSH key to login node
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Add the public SSH key to login node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-multiple-keys" class="md-nav__link">
+    Can I Use Multiple Keys?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-in" class="md-nav__link">
+    Logging In
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging In">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-mac-linux-or-newer-versions-of-windows" class="md-nav__link">
+    For Mac, Linux, or newer versions of Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-older-versions-of-windows" class="md-nav__link">
+    For older versions of Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-help" class="md-nav__link">
+    Get Help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Support And Training Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support And Training Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support And Training Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Get Help!
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Get Help!" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Get Help!
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-nav__link">
+        Email, Office Hours, and Individual Consultations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Managing HTC Workloads On the PATh Facility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing HTC Workloads On the PATh Facility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Managing HTC Workloads On the PATh Facility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Submitting HTC Workloads With HTCondor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Submitting HTC Workloads With HTCondor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Submitting HTC Workloads With HTCondor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/submitting_workloads/quickstart/" class="md-nav__link">
+        Quickstart-Submit Example HTCondor Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/submitting_workloads/submit-multiple-jobs/" class="md-nav__link">
+        Easily Submit Multiple Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/submitting_workloads/checkpointing/" class="md-nav__link">
+        Checkpointing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Specific Resource Needs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specific Resource Needs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Specific Resource Needs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/specific_resources/gpus/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/specific_resources/large-memory/" class="md-nav__link">
+        Large Memory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/specific_resources/multicore/" class="md-nav__link">
+        Multicore
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/using_software/conda-environments/" class="md-nav__link">
+        Using conda to Run Python on the PATh Facility
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/containers/containers/" class="md-nav__link">
+        Containers - Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/containers/containers-singularity/" class="md-nav__link">
+        Containers - Apptainer/Singularity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/containers/containers-docker/" class="md-nav__link">
+        Containers - Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/containers/available-containers-list/" class="md-nav__link">
+        Containers - Predefined List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Using Data and Job Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Using Data and Job Files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Using Data and Job Files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/using_data/data-transfer/" class="md-nav__link">
+        Data Staging and Transfer to Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Automated Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Automated Workflows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Automated Workflows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../htc_workloads/automated_workflows/dagman-workflows/" class="md-nav__link">
+        Submit Workflows with HTCondor's DAGMan 
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-generate-ssh-keys" class="md-nav__link">
+    Step 1: Generate SSH Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Generate SSH Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unix-based-operating-system-linuxmac-or-latest-windows-10-versions" class="md-nav__link">
+    Unix-based operating system (Linux/Mac) or latest Windows 10 versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-using-putty-to-log-in" class="md-nav__link">
+    Windows, using Putty to log in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-add-the-public-ssh-key-to-login-node" class="md-nav__link">
+    Step 2: Add the public SSH key to login node
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Add the public SSH key to login node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-multiple-keys" class="md-nav__link">
+    Can I Use Multiple Keys?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-in" class="md-nav__link">
+    Logging In
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging In">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-mac-linux-or-newer-versions-of-windows" class="md-nav__link">
+    For Mac, Linux, or newer versions of Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-older-versions-of-windows" class="md-nav__link">
+    For older versions of Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-help" class="md-nav__link">
+    Get Help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="generate-ssh-keys-and-activate-your-path-facility-login">Generate SSH Keys and Activate Your PATh Facility Login<a class="headerlink" href="#generate-ssh-keys-and-activate-your-path-facility-login" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Logging into a PATh Facility Access Point requires authenticating your credientials using one of two options: <strong>web authentication</strong> or <strong>SSH key pair authentication</strong>. This guide is for users who would like to authenticate using SSH key pairs.</p>
+<p>To use this approach, you need to follow a two-step process to associate your SSH key to your PATh Facility account. </p>
+<ol>
+<li>
+<p>Generate an SSH key pair.  </p>
+</li>
+<li>
+<p>Add your public key to the PATh Access Point by uploading it to 
+your user profile on the <a href="https://registry.cilogon.org/registry/co_petitions/start/coef:263">PATh Facility registration website</a>.</p>
+</li>
+</ol>
+<p>After completing the process, you can log in to the PATh Access Point (<code>ap1.facility.path-cc.io</code>) from a local computer 
+(your laptop or desktop) using either ssh or an ssh program like Putty -- see below for 
+more details on logging in. </p>
+<p>NOTE: Please do not edit the authorized keys file on the Access Point.</p>
+<h2 id="step-1-generate-ssh-keys">Step 1: Generate SSH Keys<a class="headerlink" href="#step-1-generate-ssh-keys" title="Permanent link">&para;</a></h2>
+<p>We will discuss how to generate a SSH key pair for two cases: </p>
+<ul>
+<li>"Unix" systems (Linux, Mac) and certain, latest versions of Windows</li>
+<li>Older Windows systems</li>
+</ul>
+<p>Please note: The key pair consist of a private key and a public key. You will upload the 
+public key <a href="https://registry.cilogon.org/registry/co_petitions/start/coef:263">PATh Facility registration website</a>, but you also need to keep a copy of the private key to log in!<br />
+You should keep the private key on machines that you have 
+direct access to, i.e. your local computer (your laptop or desktop).</p>
+<h3 id="unix-based-operating-system-linuxmac-or-latest-windows-10-versions">Unix-based operating system (Linux/Mac) or latest Windows 10 versions<a class="headerlink" href="#unix-based-operating-system-linuxmac-or-latest-windows-10-versions" title="Permanent link">&para;</a></h3>
+<p>We will create a key in the .ssh directory of your computer. Open a terminal on your local computer and run the following commands: </p>
+<div class="codehilite"><pre><span></span><code> mkdir ~/.ssh
+ chmod 700 ~/.ssh
+ ssh-keygen -t rsa
+</code></pre></div>
+
+<p>For the newer OS versions the .ssh directory is already created and the first command is redundant. The last command will produce a prompt similar to</p>
+<div class="codehilite"><pre><span></span><code> Generating public/private rsa key pair.
+ Enter file in which to save the key (/home/&lt;local_user_name&gt;/.ssh/id_rsa):
+</code></pre></div>
+
+<p>Unless you want to change the location of the key, continue by pressing enter.
+Now you will be asked for a passphrase. Enter a passphrase that you will be 
+able to remember and which is secure:</p>
+<div class="codehilite"><pre><span></span><code> Enter passphrase (empty for no passphrase):
+ Enter same passphrase again:
+</code></pre></div>
+
+<p>When everything has successfully completed, the output should resemble the
+following: </p>
+<div class="codehilite"><pre><span></span><code> Your identification has been saved in /home/&lt;local_user_name&gt;/.ssh/id_rsa.
+ Your public key has been saved in /home/&lt;local_user_name&gt;/.ssh/id_rsa.pub.
+ The key fingerprint is:
+ ...
+</code></pre></div>
+
+<p>See Step 2 below to learn how to upload the contents of the <code>.pub</code> file (~/.ssh/id_rsa.pub) to the PATh Facility registration website. </p>
+<h3 id="windows-using-putty-to-log-in">Windows, using Putty to log in<a class="headerlink" href="#windows-using-putty-to-log-in" title="Permanent link">&para;</a></h3>
+<p>If you can connect using the <code>ssh</code> command within the Command Prompt (Windows 10 build version 1803 and later), please follow the Mac/Linux directions above. If not, 
+continue with the directions below. </p>
+<ol>
+<li>
+<p>Open the <code>PuTTYgen</code> program.  You can download <code>PuttyGen</code> 
+here: <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuttyGen Download Page</a>, 
+scroll down until you see the <code>puttygen.exe</code> file. </p>
+</li>
+<li>
+<p>For Type of key to generate, select RSA or SSH-2 RSA. </p>
+</li>
+<li>
+<p>Click the "Generate" button.</p>
+</li>
+<li>
+<p><strong>Move your mouse in the area below the progress bar.</strong>
+When the progress bar is full, PuTTYgen generates your key pair.</p>
+</li>
+<li>
+<p>Type a passphrase in the "Key passphrase" field. Type the same passphrase in the "Confirm passphrase" field. You 
+can use a key without a passphrase, but this is not recommended.</p>
+</li>
+<li>
+<p>Click the "Save private key" and "Save public key" buttons to save both keys. <strong>You must save both keys.</strong> You will need them to successfully login from your machine. </p>
+</li>
+</ol>
+<p><img alt="alt text" src="/images/puttygen_ssh_key.png" title="PuttyGen Window" /></p>
+<ol>
+<li>In Step 2 below, you will upload your public key to the <a href="https://registry.cilogon.org/registry/co_petitions/start/coef:263">PATh Facility registration website</a>. The expected key is a single line, with three fields looking something like <code>ssh-rsa ASSFFSAF... user@host</code>.</li>
+</ol>
+<h2 id="step-2-add-the-public-ssh-key-to-login-node">Step 2: Add the public SSH key to login node<a class="headerlink" href="#step-2-add-the-public-ssh-key-to-login-node" title="Permanent link">&para;</a></h2>
+<p>To add your public key to the <a href="https://registry.cilogon.org/registry/co_petitions/start/coef:263">PATh Facility registration website</a>: </p>
+<ol>
+<li>
+<p>Go to the <a href="https://registry.cilogon.org/registry/co_petitions/start/coef:263">PATh Facility registration website</a> and sign in with the institutional identity you used when requesting an account. </p>
+</li>
+<li>
+<p>Click your name at the top right. In the dropdown box, click "My Profile (OSG)" button.</p>
+<p><img alt="" src="../../../assets/PATh/registration/ssh-homepage-dropdown.png" /></p>
+</li>
+<li>
+<p>On the right hand side of your profile, click "Authenticators" link.</p>
+<p><img alt="" src="../../../assets/PATh/registration/ssh-edit-profile.png" /></p>
+</li>
+<li>
+<p>On the authenticators page, click the "Manage" button.</p>
+<p><img alt="" src="../../../assets/PATh/registration/ssh-authenticator-select.png" /></p>
+</li>
+<li>
+<p>On the new SSH Keys page, click "Add SSH Key" and browse your computer to upload your public SSH key. The expected key is a single line, with three fields looking something like <code>ssh-rsa ASSFFSAF... user@host</code>.</p>
+<p><img alt="" src="../../../assets/PATh/registration/ssh-key-list.png" />
+  <strong>Mac Operating Systems</strong>: When you click "browse", your Mac Finder window will appear. At the top of the Finder window, open the drop-down box and select "Macintosh HD". Then navigate to "Users" and select your username. Using your keyboard, type <code>Command + Shift + .</code> to reveal hidden files and directories. Open the <code>.ssh</code> directory, and select the <code>id_rsa.pub</code> file. Click the "Upload" box to upload your public SSH key. </p>
+<p><strong>Windows Operating Systems</strong>: When you click "browse", an Explorer window will appear. Navigate to the directory where you saved your <em>public</em> key file. Select it and click the "Upload" box to upload your public SSH key. </p>
+<p><strong>Linux Operating Systems</strong>: When you click "browse", the window that appears may vary depending on your Linux operating system as well as your browser. You will want to navigate to your <code>id_rsa.pub</code> file, which is typically found in the path of <code>Users/[your user name]/.ssh</code>. To show hidden files/directories on a machine running Ubuntu or Debian, use the keyboard shortcut <code>ctrl + h</code>. If you have trouble finding your <code>id_ssh.pub</code> file for your specific Linux environment, there are many resources online. Additionally, our Research Computing Facilitators are here to help you should you need it. </p>
+</li>
+<li>
+<p>Once you have added your public key, click "Update". You should be able to login within a few hours. </p>
+</li>
+</ol>
+<blockquote>
+<h3 id="can-i-use-multiple-keys">Can I Use Multiple Keys?<a class="headerlink" href="#can-i-use-multiple-keys" title="Permanent link">&para;</a></h3>
+<p>Yes! If you want to log into the PATh Facility from multiple computers, you can do so by generating
+a keypair on each computer you want to use, and then adding the public key to your PATh Facility
+profile. </p>
+</blockquote>
+<h2 id="logging-in">Logging In<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
+<p>After following the steps above to upload your key and it's been a few hours, you should 
+be able to log in to begin using PATh Facility compute resources. </p>
+<h3 id="for-mac-linux-or-newer-versions-of-windows">For Mac, Linux, or newer versions of Windows<a class="headerlink" href="#for-mac-linux-or-newer-versions-of-windows" title="Permanent link">&para;</a></h3>
+<p>Open a terminal and type in: </p>
+<div class="codehilite"><pre><span></span><code>ssh &lt;your_PATh_Facility_username&gt;@ap1.facility.path-cc.io
+</code></pre></div>
+
+<p>It will ask for the passphrase for your ssh key (if you set one) and then you 
+should be logged in. </p>
+<h3 id="for-older-versions-of-windows">For older versions of Windows<a class="headerlink" href="#for-older-versions-of-windows" title="Permanent link">&para;</a></h3>
+<p>On older versions of Windows, you can use the <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty program</a> to log in. </p>
+<p><img src="/images/putty-screenshots.png" alt="PuTTY Intructions Screenshot"></p>
+<ol>
+<li>
+<p>Open the <code>PutTTY</code> program. If necessary, you can download PuTTY from the website here <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY download page</a>.</p>
+</li>
+<li>
+<p>Type in <code>ap1.facility.path-cc.io</code> as the as the hostname address. Leave Port <code>22</code> as the default Port number. </p>
+</li>
+<li>
+<p>In the left hand menu, click the "+" next to "SSH" to expand the menu.</p>
+</li>
+<li>
+<p>Click "Auth" in the "SSH" menu.</p>
+</li>
+<li>
+<p>Click "Browse" and specify the private key file you saved in Step 1.</p>
+</li>
+<li>
+<p>Return to "Session".  <br />
+   a. Name your session  <br />
+   b. Save session for future use     </p>
+</li>
+<li>
+<p>Click "Open" to launch shell. Provide your ssh-key passphrase (created above in PuTTYgen) when prompted to do so.</p>
+</li>
+</ol>
+<h2 id="get-help">Get Help<a class="headerlink" href="#get-help" title="Permanent link">&para;</a></h2>
+<p>For questions regarding logging in or creating an account, contact us at<br />
+<a href="mailto:support@path-cc.io">support@path-cc.io</a>.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../registration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Register for a PATh Facility Account" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Register for a PATh Facility Account
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-footer__link md-footer__link--next" aria-label="Next: Email, Office Hours, and Individual Consultations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Email, Office Hours, and Individual Consultations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

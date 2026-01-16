@@ -1,0 +1,1512 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://portal.path-cc.io/documentation/htc_workloads/submitting_workloads/submit-multiple-jobs/">
+      
+      <link rel="icon" href="../../../assets/PATh_Logo_Round_Color.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Easily Submit Multiple Jobs - PATh Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/path.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#easily-submit-multiple-jobs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="/" title="PATh Documentation" class="md-header__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PATh Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Easily Submit Multiple Jobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../overview/account_setup/getting-started/" class="md-tabs__link">
+        Overview
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-tabs__link">
+        Support And Training Resources
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quickstart/" class="md-tabs__link md-tabs__link--active">
+        Managing HTC Workloads On the PATh Facility
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="/" title="PATh Documentation" class="md-nav__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    PATh Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/request-credits/" class="md-nav__link">
+        Request PATh Facility Credits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/references/credit-account-charges/" class="md-nav__link">
+        Credit Account Charges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/references/PATh_vs_OSPool/" class="md-nav__link">
+        PATh Facility vs. OSG's Open Science Pool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Account Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Account Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/registration/" class="md-nav__link">
+        Register for a PATh Facility Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/generate-add-sshkey/" class="md-nav__link">
+        Log in with SSH Keys
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Support And Training Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support And Training Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support And Training Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Get Help!
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Get Help!" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Get Help!
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-nav__link">
+        Email, Office Hours, and Individual Consultations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Managing HTC Workloads On the PATh Facility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing HTC Workloads On the PATh Facility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Managing HTC Workloads On the PATh Facility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Submitting HTC Workloads With HTCondor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Submitting HTC Workloads With HTCondor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Submitting HTC Workloads With HTCondor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        Quickstart-Submit Example HTCondor Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Easily Submit Multiple Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Easily Submit Multiple Jobs
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-multiple-jobs-using-queue" class="md-nav__link">
+    Submit Multiple Jobs Using queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-use-queue-n-in-you-htcondor-submit-files" class="md-nav__link">
+    1. Use queue N in you HTCondor submit files
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Use queue N in you HTCondor submit files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-use-integer-numbered-input-files" class="md-nav__link">
+    A. Use integer numbered input files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-specify-a-row-or-column-number-for-each-job" class="md-nav__link">
+    B. Specify a row or column number for each job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-need-n-to-start-at-1" class="md-nav__link">
+    C. Need N to start at 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-submit-multiple-jobs-with-one-or-more-distinct-variables-per-job" class="md-nav__link">
+    2. Submit multiple jobs with one or more distinct variables per job
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Submit multiple jobs with one or more distinct variables per job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-multiple-variables-for-each-job" class="md-nav__link">
+    Use multiple variables for each job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-organizing-jobs-into-individual-directories" class="md-nav__link">
+    3. Organizing Jobs Into Individual Directories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checkpointing/" class="md-nav__link">
+        Checkpointing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Specific Resource Needs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specific Resource Needs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Specific Resource Needs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specific_resources/gpus/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specific_resources/large-memory/" class="md-nav__link">
+        Large Memory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specific_resources/multicore/" class="md-nav__link">
+        Multicore
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_software/conda-environments/" class="md-nav__link">
+        Using conda to Run Python on the PATh Facility
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/containers/" class="md-nav__link">
+        Containers - Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/containers-singularity/" class="md-nav__link">
+        Containers - Apptainer/Singularity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/containers-docker/" class="md-nav__link">
+        Containers - Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/available-containers-list/" class="md-nav__link">
+        Containers - Predefined List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Using Data and Job Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Using Data and Job Files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Using Data and Job Files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_data/data-transfer/" class="md-nav__link">
+        Data Staging and Transfer to Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Automated Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Automated Workflows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Automated Workflows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../automated_workflows/dagman-workflows/" class="md-nav__link">
+        Submit Workflows with HTCondor's DAGMan 
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-multiple-jobs-using-queue" class="md-nav__link">
+    Submit Multiple Jobs Using queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-use-queue-n-in-you-htcondor-submit-files" class="md-nav__link">
+    1. Use queue N in you HTCondor submit files
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Use queue N in you HTCondor submit files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-use-integer-numbered-input-files" class="md-nav__link">
+    A. Use integer numbered input files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-specify-a-row-or-column-number-for-each-job" class="md-nav__link">
+    B. Specify a row or column number for each job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-need-n-to-start-at-1" class="md-nav__link">
+    C. Need N to start at 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-submit-multiple-jobs-with-one-or-more-distinct-variables-per-job" class="md-nav__link">
+    2. Submit multiple jobs with one or more distinct variables per job
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Submit multiple jobs with one or more distinct variables per job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-multiple-variables-for-each-job" class="md-nav__link">
+    Use multiple variables for each job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-organizing-jobs-into-individual-directories" class="md-nav__link">
+    3. Organizing Jobs Into Individual Directories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="easily-submit-multiple-jobs">Easily Submit Multiple Jobs<a class="headerlink" href="#easily-submit-multiple-jobs" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>HTCondor has several convenient features for streamlining high-throughput 
+job submission. This guide provides several examples 
+of how to leverage these features to <strong>submit multiple jobs with a 
+single submit file.</strong></p>
+<p><em>Why submit multiple jobs with a single submit file?</em></p>
+<p>Many options exist for streamlining your submission of multiple jobs, 
+and this guide only covers a few examples of what is truly possible with 
+HTCondor.</p>
+<h2 id="submit-multiple-jobs-using-queue">Submit Multiple Jobs Using <code>queue</code><a class="headerlink" href="#submit-multiple-jobs-using-queue" title="Permanent link">&para;</a></h2>
+<p>All HTCondor submit files require a <code>queue</code> attribute (which must also be 
+the last line of the submit file). By default, <code>queue</code> will submit one job, but 
+users can also configure the <code>queue</code> attribute to behave like a for loop 
+that will submit multiple jobs, with each job varying as predefined by the user.</p>
+<p>Below are different HTCondor submit file examples for submitting batches of multiple 
+jobs and, where applicable, how to indicate the differences between jobs in a batch 
+with user-defined variables. Additional examples and use cases are provided further below:</p>
+<ol>
+<li><strong><em><a href="#process">queue &lt;N></a></em></strong> - will submit <em>N</em> number of jobs. Examples 
+    include performing replications, where the same job must be repeated <em>N</em> number 
+    of times, looping through files named with numbers, and looping through 
+    a matrix where each job uses information from a specific row or column.</li>
+<li><strong><em><a href="#foreach">queue &lt;var> from &lt;list></a></em></strong> - will loop through a 
+    list of file names, parameters, etc. as defined in separate text file (i.e. <em><list></em>). 
+    This <code>queue</code> option is very flexible and provides users with many options for 
+    submitting multiple jobs.</li>
+<li><strong><a href="#initialdir">Organizing Jobs Into Individual Directories</a></strong> -
+    another option that can be helpful in organizing multi-job submissions.</li>
+</ol>
+<p>These <code>queue</code> options are also described in the following video from HTCondor Week 2020: 
+<a href="https://www.youtube.com/watch?v=m7dQChJH5LU">
+    <img alt="2020 HTCondor Week Presentation" src="/images/multi-job-submit-video-thumbnail.png" width="360" height="204"></a></p>
+<p><a href="https://www.youtube.com/watch?v=m7dQChJH5LU">Submitting Multiple Jobs Using HTCondor Video</a></p>
+<p>What makes these <code>queue</code> options powerful is the ability to use user-defined 
+variables to specify details about your jobs in the HTCondor submit file. The 
+examples below will include the use of <code>$(variable_name)</code> to specify details 
+like input file names, file locations (aka paths), etc. <strong>When selecting a 
+variable name, users must avoid bespoke HTCondor submit file variables 
+such as <code>Cluster</code>, <code>Process</code>, <code>output</code>, and <code>input</code>, <code>arguments</code>, etc.</strong></p>
+<h2 id="1-use-queue-n-in-you-htcondor-submit-files">1. Use <code>queue N</code> in you HTCondor submit files<a name="process"></a><a class="headerlink" href="#1-use-queue-n-in-you-htcondor-submit-files" title="Permanent link">&para;</a></h2>
+<p>When using <code>queue N</code>, HTCondor will submit a total of <em>N</em> 
+jobs, counting from 0 to <em>N</em> - 1 and each job will be assigned 
+a unique <code>Process</code> id number spanning this range of values. Because 
+the <code>Process</code> variable will be unique for each job, it can be used in 
+the submit file to indicate unique filenames and filepaths for each job.</p>
+<p>The most straightforward example of using <code>queue N</code> is to submit 
+<em>N</em> number of identical jobs. The example shown below demonstrates 
+how to use the <code>Cluster</code> and <code>Process</code> variables to assign unique names 
+for the HTCondor <code>error</code>, <code>output</code>, and <code>log</code> files for each job in the batch:</p>
+<div class="codehilite"><pre><span></span><code># 100jobs.sub
+# submit 100 identical jobs
+
+log = job_$(Cluster)_$(Process).log
+error = job_$(Cluster)_$(Process).err
+output = job_$(Cluster)_$(Process).out
+
+... remaining submit details ...
+
+queue 100
+</code></pre></div>
+
+<p>For each job, the appropriate number, <code>0, 1, 2, ... 99</code> will replace <code>$(Process)</code>. 
+<code>$(Cluster)</code> will be a unique number assigned to the entire 100 job batch. Each 
+time you run <code>condor_submit job.sub</code>, you will be provided 
+with the <code>Cluster</code> number which you will also see in the output produced by 
+the command <code>condor_q</code>.</p>
+<p>If a uniquely named results file needs to be returned by each job, 
+<code>$(Process)</code> and <code>$(Cluster)</code> can also be used as <code>arguments</code>, and anywhere 
+else as needed, in the submit file:</p>
+<div class="codehilite"><pre><span></span><code>arguments = $(Cluster)_$(Process).results
+
+... remaining submit details ...
+
+queue 100
+</code></pre></div>
+
+<p>Be sure to properly format the <code>arguments</code> statement according to the 
+executable used by the job.</p>
+<p><strong><em>What if my jobs are not identical?</em></strong> <code>queue N</code> may still be a great 
+option! Additional examples for using this option include:</p>
+<h3 id="a-use-integer-numbered-input-files">A. Use integer numbered input files<a class="headerlink" href="#a-use-integer-numbered-input-files" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>[user@login]$ ls *.data
+0.data   1.data   2.data   3.data
+...      97.data  98.data  99.data
+</code></pre></div>
+
+<p>In the submit file, use:</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = $(Process).data
+
+... remaining submit details ...
+
+queue 100
+</code></pre></div>
+
+<h3 id="b-specify-a-row-or-column-number-for-each-job">B. Specify a row or column number for each job<a class="headerlink" href="#b-specify-a-row-or-column-number-for-each-job" title="Permanent link">&para;</a></h3>
+<p>$(Process) can be used to specify a unique row or column of information in a 
+matrix to be used by each job in the batch. The matrix needs to then be transferred 
+with each job as input. For exmaple:</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = matrix.csv
+arguments = $(Process)
+
+... remaining submit details ...
+
+queue 100
+</code></pre></div>
+
+<p>The above exmaples assumes that your job is set up to use an argument to 
+specify the row or column to be used by your software.</p>
+<h3 id="c-need-n-to-start-at-1">C. Need <em>N</em> to start at 1<a class="headerlink" href="#c-need-n-to-start-at-1" title="Permanent link">&para;</a></h3>
+<p>If your input files are numbered 1 - 100 instead of 0 - 99, or your matrix 
+row starts with 1 instead of 0, you can perform basic arithmetic in the submit 
+file:</p>
+<div class="codehilite"><pre><span></span><code>plusone = $(Process) + 1
+NewProcess = $INT(plusone, %d)
+arguments = $(NewProcess)
+
+... remaining submit details ...
+
+queue 100
+</code></pre></div>
+
+<p>Then use <code>$(NewProcess)</code> anywhere in the submit file that you would
+have otherwise used <code>$(Process)</code>. Note that there is nothing special about the 
+names <code>plusone</code> and <code>NewProcess</code>, you can use any names you want as variables.</p>
+<h2 id="2-submit-multiple-jobs-with-one-or-more-distinct-variables-per-job">2. Submit multiple jobs with one or more distinct variables per job<a name="foreach"></a><a class="headerlink" href="#2-submit-multiple-jobs-with-one-or-more-distinct-variables-per-job" title="Permanent link">&para;</a></h2>
+<p>Think about what's different between each job that needs to be submitted. 
+Will each job use a different input file or combination of software parameters? Do 
+some of the jobs need more memory or disk space? Do you want to use a different 
+software or script on a common set of input files? Using <code>queue &lt;var&gt; from &lt;list&gt;</code> 
+in your submit files can make that possible! <code>&lt;var&gt;</code> can be a single user-defined 
+variable or comma-separated list of variables to be used anywhere in the submit file. 
+<code>&lt;list&gt;</code> is a plain text file that defines <code>&lt;var&gt;</code> for each individual job to be submitted in the batch.</p>
+<p>Suppose you need to run a program called <code>compare_states</code> that will run on 
+on the following set of input files: <code>illinois.data</code>, <code>nebraska.data</code>, and 
+<code>wisconsin.data</code> and each input file can analyzed as a separate job.</p>
+<p>To create a submit file that will submit all three jobs, first create a 
+text file that lists each <code>.data</code> file (one file per line). 
+This step can be performed directly on the login node, for example:</p>
+<div class="codehilite"><pre><span></span><code>[user@state-analysis]$ ls *.data &gt; states.txt
+[user@state-analysis]$ cat states.txt
+illinois.data
+nebraska.data
+wisconsin.data
+</code></pre></div>
+
+<p>Then, in the submit file, following the pattern <code>queue &lt;var&gt; from &lt;list&gt;</code>,
+replace <code>&lt;var&gt;</code> with a variable name like <code>state</code> and replace <code>&lt;list&gt;</code> 
+with the list of <code>.data</code> files saved in <code>states.txt</code>:</p>
+<div class="codehilite"><pre><span></span><code>queue state from states.txt
+</code></pre></div>
+
+<p>For each line in <code>states.txt</code>, HTCondor will submit a job and the variable 
+<code>$(state)</code> can be used anywhere in the submit file to represent the name of the <code>.data</code> file 
+to be used by that job. For the first job, <code>$(state)</code> will be <code>illinois.data</code>, for the 
+second job <code>$(state)</code> will be <code>nebraska.data</code>, and so on. For example:</p>
+<div class="codehilite"><pre><span></span><code># run_compare_states_per_state.sub
+
+transfer_input_files = $(state)
+arguments = $(state)
+executable = compare_states
+
+... remaining submit details ...
+
+queue state from states.txt
+</code></pre></div>
+
+<p>For a working example of this kind of job submission, see our <a href="../../../software_examples/python/tutorial-wordfreq/">Word Frequency Tutorial</a>.</p>
+<h3 id="use-multiple-variables-for-each-job">Use multiple variables for each job<a class="headerlink" href="#use-multiple-variables-for-each-job" title="Permanent link">&para;</a></h3>
+<p>Let's imagine that each state <code>.data</code> file contains data spanning several 
+years and that each job needs to analyze a specific year of data. Then 
+the states.txt file can be modified to specify this information:</p>
+<div class="codehilite"><pre><span></span><code>[user@state-analysis]$ cat states.txt
+illinois.data, 1995
+illinois.data, 2005
+nebraska.data, 1999
+nebraska.data, 2005
+wisconsin.data, 2000
+wisconsin.data, 2015
+</code></pre></div>
+
+<p>Then modify the <code>queue</code> to define two <code>&lt;var&gt;</code> named <code>state</code> and <code>year</code>:</p>
+<div class="codehilite"><pre><span></span><code>queue state,year from states.txt
+</code></pre></div>
+
+<p>Then the variables <code>$(state)</code> and <code>$(year)</code> can be used in the submit file:</p>
+<div class="codehilite"><pre><span></span><code># run_compare_states_by_year.sub
+arguments = $(state) $(year)
+transfer_input_files = $(state)
+executable = compare_states
+
+... remaining submit details ...
+
+queue state,year from states.txt
+</code></pre></div>
+
+<h2 id="3-organizing-jobs-into-individual-directories">3. Organizing Jobs Into Individual Directories<a name="initialdir"></a><a class="headerlink" href="#3-organizing-jobs-into-individual-directories" title="Permanent link">&para;</a></h2>
+<p>One way to organize jobs is to assign each job to its own directory,
+instead of putting files in the same directory with unique names. To
+continue our \"compare_states\" example, suppose there\'s a directory
+for each state you want to analyze, and each of those directories has
+its own input file named <code>input.data</code>:</p>
+<div class="codehilite"><pre><span></span><code>[user@state-analysis]$ ls -F
+compare_states  illinois/  nebraska/  wisconsin/
+
+[user@state-analysis]$ ls -F illinois/
+input.data
+
+[user@state-analysis]$ ls -F nebraska/
+input.data
+
+[user@state-analysis]$ ls -F wisconsin/
+input.data
+</code></pre></div>
+
+<p>The HTCondor submit file attribute <code>initialdir</code> can be used 
+to define a specific directory from which each job in the batch will be 
+submitted. The default <code>initialdir</code> location is the directory from which the 
+command <code>condor_submit myjob.sub</code> is executed. </p>
+<p>Combining <code>queue var from list</code> with <code>initiadir</code>, each line of <em><list></em> will include 
+the path to each state directory and <code>initialdir</code> set to this path for 
+each job:</p>
+<div class="codehilite"><pre><span></span><code>#state-per-dir-job.sub
+initial_dir = $(state_dir)
+transfer_input_files = input.data   
+executable = compare_states
+
+... remaining submit details ...
+
+queue state_dir from state-dirs.txt
+</code></pre></div>
+
+<p>Where <code>state-dirs.txt</code> is a list of each directory with state data:</p>
+<div class="codehilite"><pre><span></span><code>[user@state-analysis]$ cat state-dirs.txt
+illinois
+nebraska
+wisconsin
+</code></pre></div>
+
+<p><strong>Notice that <code>executable = compare_states</code> has remained unchanged in the above example. 
+When using <code>initialdir</code>, only the input and output file path (including the HTCondor log, error, and 
+output files) will be changed by <code>initialdir</code></strong>.</p>
+<p>In this example, HTCondor will create a job for each directory in <code>state-dirs.txt</code> and use 
+that state\'s directory as the <code>initialdir</code> from which the job will be submitted. 
+Therefore, <code>transfer_input_files = input.data</code> can be used without specifying 
+the path to this <code>input.data</code> file. Any output generated by the job will then be returned to the <code>initialdir</code> 
+location.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart-Submit Example HTCondor Jobs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Quickstart-Submit Example HTCondor Jobs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../checkpointing/" class="md-footer__link md-footer__link--next" aria-label="Next: Checkpointing Jobs" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Checkpointing Jobs
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

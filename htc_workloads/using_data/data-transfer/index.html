@@ -1,0 +1,1512 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://portal.path-cc.io/documentation/htc_workloads/using_data/data-transfer/">
+      
+      <link rel="icon" href="../../../assets/PATh_Logo_Round_Color.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Data Staging and Transfer to Jobs - PATh Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/path.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-staging-and-transfer-to-jobs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="/" title="PATh Documentation" class="md-header__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PATh Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Staging and Transfer to Jobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../overview/account_setup/getting-started/" class="md-tabs__link">
+        Overview
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-tabs__link">
+        Support And Training Resources
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../submitting_workloads/quickstart/" class="md-tabs__link md-tabs__link--active">
+        Managing HTC Workloads On the PATh Facility
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="/" title="PATh Documentation" class="md-nav__button md-logo" aria-label="PATh Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/PATh_Logo_Round_Color_White_Border.png" alt="logo">
+
+    </a>
+    PATh Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/request-credits/" class="md-nav__link">
+        Request PATh Facility Credits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/references/credit-account-charges/" class="md-nav__link">
+        Credit Account Charges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/references/PATh_vs_OSPool/" class="md-nav__link">
+        PATh Facility vs. OSG's Open Science Pool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Account Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Account Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/registration/" class="md-nav__link">
+        Register for a PATh Facility Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/account_setup/generate-add-sshkey/" class="md-nav__link">
+        Log in with SSH Keys
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Support And Training Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support And Training Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support And Training Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Get Help!
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Get Help!" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Get Help!
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_and_training/support/getting-help-from-RCFs/" class="md-nav__link">
+        Email, Office Hours, and Individual Consultations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Managing HTC Workloads On the PATh Facility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing HTC Workloads On the PATh Facility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Managing HTC Workloads On the PATh Facility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Submitting HTC Workloads With HTCondor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Submitting HTC Workloads With HTCondor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Submitting HTC Workloads With HTCondor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submitting_workloads/quickstart/" class="md-nav__link">
+        Quickstart-Submit Example HTCondor Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submitting_workloads/submit-multiple-jobs/" class="md-nav__link">
+        Easily Submit Multiple Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submitting_workloads/checkpointing/" class="md-nav__link">
+        Checkpointing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Specific Resource Needs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specific Resource Needs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Specific Resource Needs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specific_resources/gpus/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specific_resources/large-memory/" class="md-nav__link">
+        Large Memory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specific_resources/multicore/" class="md-nav__link">
+        Multicore
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_software/conda-environments/" class="md-nav__link">
+        Using conda to Run Python on the PATh Facility
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/containers/" class="md-nav__link">
+        Containers - Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/containers-singularity/" class="md-nav__link">
+        Containers - Apptainer/Singularity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/containers-docker/" class="md-nav__link">
+        Containers - Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/available-containers-list/" class="md-nav__link">
+        Containers - Predefined List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Using Data and Job Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Using Data and Job Files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Using Data and Job Files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Staging and Transfer to Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Staging and Transfer to Jobs
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-spaces-on-the-path-facility" class="md-nav__link">
+    Data Spaces on the PATh Facility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#space-for-project-or-public-data" class="md-nav__link">
+    Space for Project or Public Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-data-tofrom-htcondor-jobs" class="md-nav__link">
+    Transferring Data To/From HTCondor Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-smaller-job-input-and-output-files-tofrom-home" class="md-nav__link">
+    Transfer Smaller Job Input and Output Files to/from /home
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Smaller Job Input and Output Files to/from /home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files-from-home" class="md-nav__link">
+    Input Files from /home
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-files-to-home" class="md-nav__link">
+    Output Files to /home
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-larger-job-input-and-output-files-tofrom-path-facilitydata" class="md-nav__link">
+    Transfer Larger Job Input and Output Files to/from /path-facility/data
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Larger Job Input and Output Files to/from /path-facility/data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files-from-path-facilitydata" class="md-nav__link">
+    Input Files from /path-facility/data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-files-to-path-facilitydata" class="md-nav__link">
+    Output Files to /path-facility/data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-data-tofrom-path-facility-access-points" class="md-nav__link">
+    Moving Data to/from PATh Facility Access Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-quota-and-available-space" class="md-nav__link">
+    Check Your Quota and Available Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Check Your Quota and Available Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-your-home-quota" class="md-nav__link">
+    Check your /home quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-your-path-facilitydata-quota" class="md-nav__link">
+    Check your /path-facility/data quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-quota-increase" class="md-nav__link">
+    Request Quota Increase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-policies" class="md-nav__link">
+    Data Policies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Automated Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Automated Workflows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Automated Workflows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../automated_workflows/dagman-workflows/" class="md-nav__link">
+        Submit Workflows with HTCondor's DAGMan 
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-spaces-on-the-path-facility" class="md-nav__link">
+    Data Spaces on the PATh Facility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#space-for-project-or-public-data" class="md-nav__link">
+    Space for Project or Public Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-data-tofrom-htcondor-jobs" class="md-nav__link">
+    Transferring Data To/From HTCondor Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-smaller-job-input-and-output-files-tofrom-home" class="md-nav__link">
+    Transfer Smaller Job Input and Output Files to/from /home
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Smaller Job Input and Output Files to/from /home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files-from-home" class="md-nav__link">
+    Input Files from /home
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-files-to-home" class="md-nav__link">
+    Output Files to /home
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-larger-job-input-and-output-files-tofrom-path-facilitydata" class="md-nav__link">
+    Transfer Larger Job Input and Output Files to/from /path-facility/data
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Larger Job Input and Output Files to/from /path-facility/data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files-from-path-facilitydata" class="md-nav__link">
+    Input Files from /path-facility/data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-files-to-path-facilitydata" class="md-nav__link">
+    Output Files to /path-facility/data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-data-tofrom-path-facility-access-points" class="md-nav__link">
+    Moving Data to/from PATh Facility Access Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-quota-and-available-space" class="md-nav__link">
+    Check Your Quota and Available Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Check Your Quota and Available Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-your-home-quota" class="md-nav__link">
+    Check your /home quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-your-path-facilitydata-quota" class="md-nav__link">
+    Check your /path-facility/data quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-quota-increase" class="md-nav__link">
+    Request Quota Increase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-policies" class="md-nav__link">
+    Data Policies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="data-staging-and-transfer-to-jobs">Data Staging and Transfer to Jobs<a class="headerlink" href="#data-staging-and-transfer-to-jobs" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>As a distributed system, jobs in the PATh Facility can run in different physical locations, where the computers that are executing jobs don't have direct access to the files placed on the Access Point (e.g. in a <code>/home</code> directory on <code>ap1.facility.path-cc.io</code>). In order to run on this kind of distributed system, jobs need to "bring along" the data, code, packages, and other files from the Access Point (where the job is submitted) to the PATh Facility execute points (where the job will run).  HTCondor's file transfer tools and plugins make this possible; input and output files are specified as part of the job submission and then moved to and from the execution location. </p>
+<p>This guide describes where to place files on PATh Facility Access Points, and how to use these files within jobs. </p>
+<h2 id="data-spaces-on-the-path-facility">Data Spaces on the PATh Facility<a class="headerlink" href="#data-spaces-on-the-path-facility" title="Permanent link">&para;</a></h2>
+<p>There are two spaces for placing files on the PATh Facility Access Point, and each has a corresponding transfer method for referencing files in the submit file. </p>
+<table>
+<tr>
+  <th>Location</th>
+  <th>File Sizes</th>
+  <th>Transfer Method</th>
+  <th>Initial Quota</th>
+</tr>
+<tr>
+  <td rowspan="2"><code>/home/$USER</code></td>
+  <td>Input: less than 1Gb per job</td>
+  <td rowspan="2">file paths in <code>transfer_input_files</code></td>
+  <td rowspan="2">50GB</td>
+</tr>
+<tr>
+  <td>Output: less than 1Gb per job</td>
+</tr>
+<tr>
+  <td rowspan="2"><code>/path-facility/data/$USER</code></td>
+  <td>greater than 1Gb per job <br> OR shared files used by many jobs </td>
+  <td rowspan="2"><code>osdf:///</code> links in <code>transfer_input_files</code></td>
+  <td rowspan="2">500GB / 250k items</td>
+</tr>
+<tr>
+  <td> greater than 1Gb per job</td>
+</tr>
+</table>
+
+<h2 id="space-for-project-or-public-data">Space for Project or Public Data<a class="headerlink" href="#space-for-project-or-public-data" title="Permanent link">&para;</a></h2>
+<p>The examples above are both specific to a single user. If you need to share files 
+with other members of your group or project, or need to make files publicly available, 
+please contact the facilitation team to arrange a project folder: <a href="mailto:support@path-cc.io">support@path-cc.io</a></p>
+<h2 id="transferring-data-tofrom-htcondor-jobs">Transferring Data To/From HTCondor Jobs<a class="headerlink" href="#transferring-data-tofrom-htcondor-jobs" title="Permanent link">&para;</a></h2>
+<p><strong>Regardless of where data is placed, jobs should only be submitted with <code>condor_submit</code> from <code>/home</code>.</strong></p>
+<h2 id="transfer-smaller-job-input-and-output-files-tofrom-home">Transfer Smaller Job Input and Output Files to/from <code>/home</code><a class="headerlink" href="#transfer-smaller-job-input-and-output-files-tofrom-home" title="Permanent link">&para;</a></h2>
+<p>You should use your <code>/home</code> directory to stage job files where: 
+* individual input files per job are less than 1GB per file, and if there 
+are multiple files, they total less than 1GB
+* output files per job are less than 1GB per file</p>
+<h3 id="input-files-from-home">Input Files from <code>/home</code><a class="headerlink" href="#input-files-from-home" title="Permanent link">&para;</a></h3>
+<p>To transfer input files from <code>/home</code>, list the files by name in the <code>transfer_input_files</code> submit file option. You can use either absolute or relative paths to your input files. Multiple files can be specified using a comma-separated list. </p>
+<p>Some examples: </p>
+<ul>
+<li>Transferring multiple files from the submission directory
+        transfer_input_files = my_data.csv, my_software.tar.gz, my_script.py</li>
+<li>Transferring a file using an absolute path is useful if a file is not in the same directory tree as your submit file: 
+        transfer_input_files = /home/username/path/to/my_software.tar.gz</li>
+</ul>
+<h3 id="output-files-to-home">Output Files to <code>/home</code><a class="headerlink" href="#output-files-to-home" title="Permanent link">&para;</a></h3>
+<p>By default, files created by your job will automatically be returned to your <code>/home</code> directory. If you would like a file to return to a diffrent subfolder within your <code>/home</code> directory, use HTCondor's <code>transfer_output_remaps</code> option. </p>
+<!--For more information, see below.
+Link to different guide??? -->
+
+<h2 id="transfer-larger-job-input-and-output-files-tofrom-path-facilitydata">Transfer Larger Job Input and Output Files to/from <code>/path-facility/data</code><a class="headerlink" href="#transfer-larger-job-input-and-output-files-tofrom-path-facilitydata" title="Permanent link">&para;</a></h2>
+<p>You should use your <code>/path-facility/data</code> directory to stage job files where: 
+* individual input files per job are greater than 1GB per file
+* an input file (of any size) is used by many jobs
+* output files per job are greater than 1GB per file</p>
+<blockquote>
+<p><strong>Important Note:</strong> 
+Large files stored in <code>/path-facility/data</code> are cached, so it is important to use a 
+descriptive file name (possibly using version names or dates within the file name), or 
+a directory structure with unique names to 
+ensure you know what version of the file you are using within your job. </p>
+</blockquote>
+<p>Behind the scenes, the files in <code>/path-facility/data</code> are being distributed
+using a network called the <a href="https://osg-htc.org/services/osdf.html">Open Science Data Federation</a> (or OSDF), which is 
+why you'll see that acronym in the commands and variables below. </p>
+<h3 id="input-files-from-path-facilitydata">Input Files from <code>/path-facility/data</code><a class="headerlink" href="#input-files-from-path-facilitydata" title="Permanent link">&para;</a></h3>
+<p>To transfer input files from <code>/path-facility/data</code>, use the <code>osdf:///</code> plugin syntax as part of the <code>transfer_input_files</code> submit file option. </p>
+<p>Some examples: </p>
+<ul>
+<li>
+<p>Transferring one file from <code>/path-facility/data</code></p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = osdf:///path-facility/data/&lt;username&gt;/InFile.txt
+</code></pre></div>
+
+</li>
+<li>
+<p>When using multiple files from <code>/path-facility/data</code>, it can be useful to use 
+    HTCondor submit file variables to make your list of files more readable: </p>
+<div class="codehilite"><pre><span></span><code># Define a variable (example: OSDF_LOCATION) equal to the 
+# path you would like files transferred to, and call this 
+# variable using $(variable)
+OSDF_LOCATION = osdf:///path-facility/data/&lt;username&gt;
+transfer_input_files = $(OSDF_LOCATION)/InputFile.txt, $(OSDF_LOCATION)/database.sql
+</code></pre></div>
+
+</li>
+</ul>
+<h3 id="output-files-to-path-facilitydata">Output Files to <code>/path-facility/data</code><a class="headerlink" href="#output-files-to-path-facilitydata" title="Permanent link">&para;</a></h3>
+<p>If you would like a job to transfer a large file back to your <code>/path-facility/data</code> directory, in your HTCondor submit file, use the same <code>osdf:///</code> plugin syntax as for input files, but with the HTCondor <code>transfer_output_remaps</code> submit file option. When 
+transferring multiple files back to <code>/path-facility/data</code> in this way, you will separate
+the different files/remaps with a semi-colon. </p>
+<p>Some examples: </p>
+<ul>
+<li>
+<p>Transferring one output file (<code>OutFile.txt</code>) back to <code>/path-facility/data</code>: </p>
+<div class="codehilite"><pre><span></span><code>transfer_output_remaps = &quot;OutFile.txt=osdf:///ospool/protected/&lt;username&gt;/OutFile.txt&quot;
+</code></pre></div>
+
+</li>
+<li>
+<p>When using multiple files from <code>/path-facility/data</code>, it can be useful to use 
+    HTCondor submit file variables to make your list of files more readable. Also note 
+    the semi-colon separator in the list of output files. </p>
+<div class="codehilite"><pre><span></span><code># Define a variable (example: OSDF_LOCATION) equal to the 
+# path you would like files transferred to, and call this 
+# variable using $(variable)
+OSDF_LOCATION = osdf:///path-facility/data/&lt;username&gt;
+transfer_output_remaps = &quot;file1.txt = $(OSDF_LOCATION)/file1.txt; file2.txt = $(OSDF_LOCATION)/file2.txt; file3.txt = $(OSDF_LOCATION)/file3.txt&quot;
+</code></pre></div>
+
+</li>
+</ul>
+<h2 id="moving-data-tofrom-path-facility-access-points">Moving Data to/from PATh Facility Access Points<a class="headerlink" href="#moving-data-tofrom-path-facility-access-points" title="Permanent link">&para;</a></h2>
+<p>In general, common Unix tools such as rsync, scp, PuTTY, WinSCP, gFTP, etc. can be used to upload data from your computer or another server to your PATh Facility Access Point or to download files. Files should be uploaded/created and staged in <code>/home</code> or <code>/path-facility</code> for preparation to use in jobs (as described above). </p>
+<h2 id="check-your-quota-and-available-space">Check Your Quota and Available Space<a class="headerlink" href="#check-your-quota-and-available-space" title="Permanent link">&para;</a></h2>
+<h3 id="check-your-home-quota">Check your <code>/home</code> quota<a class="headerlink" href="#check-your-home-quota" title="Permanent link">&para;</a></h3>
+<p>To check your home quota and usage, run: </p>
+<div class="codehilite"><pre><span></span><code>$ quota -vs
+</code></pre></div>
+
+<h3 id="check-your-path-facilitydata-quota">Check your <code>/path-facility/data</code> quota<a class="headerlink" href="#check-your-path-facilitydata-quota" title="Permanent link">&para;</a></h3>
+<p>For now, contact the facilitation team if you are unsure what your <code>/path-facility/data</code> 
+quota is. </p>
+<h3 id="request-quota-increase">Request Quota Increase<a class="headerlink" href="#request-quota-increase" title="Permanent link">&para;</a></h3>
+<p>Contact us at support@path-cc.io if you think you need a quota increase. We have space for substantial workloads when communicated with in advance. </p>
+<h2 id="data-policies">Data Policies<a class="headerlink" href="#data-policies" title="Permanent link">&para;</a></h2>
+<p>In general, users are responsible for managing data and for using appropriate mechanisms for delivering data to/from jobs. Each space for data is controlled with a quota and should be treated as temporary storage for <em>active</em> job execution. The PATh Facility has no routine backup of data in these locations, and users should remove old data after jobs complete. </p>
+<p>Data stored within <code>/home</code> and <code>/path-facility/data</code> is available only to your jobs, but highly sensitive data (e.g. HIPAA) should never be uploaded to PATh servces. </p>
+<p>PATh staff reserve the right to monitor and/or remove data without notice to the user if doing so is necessary for ensuring proper use or to quickly fix a performance or security issue. Additionally, users should not use PATh resources or services for long-term data storage (see above). </p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../containers/available-containers-list/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Containers - Predefined List" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Containers - Predefined List
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../automated_workflows/dagman-workflows/" class="md-footer__link md-footer__link--next" aria-label="Next: Submit Workflows with HTCondor&#39;s DAGMan " rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Submit Workflows with HTCondor's DAGMan 
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

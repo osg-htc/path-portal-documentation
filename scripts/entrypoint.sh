@@ -6,4 +6,6 @@ python3 scripts/link-docs.py
 
 echo "I have built the User Documentation"
 
-mkdocs "$@"
+cd /docs
+
+exec mkdocs "$@"

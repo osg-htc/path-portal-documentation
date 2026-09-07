@@ -58,3 +58,13 @@ docker run --rm -it \
   klakegg/html-proofer:3.19.2 \
   --allow-hash-href --check-html --empty-alt-ignore --disable-external
 ```
+
+#### Deploying new Testing Images
+
+To facilitate developing the user-documentation on update of this repo you should push new containers
+so that they can be used for dev.
+
+```shell
+docker build --platform linux/amd64 -t hub.opensciencegrid.org/opensciencegrid/path-portal-documentation:latest .
+docker push hub.opensciencegrid.org/opensciencegrid/path-portal-documentation:latest
+```
